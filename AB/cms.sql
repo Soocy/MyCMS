@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: localhost:3306
--- Létrehozás ideje: 2017. Aug 18. 12:30
+-- Létrehozás ideje: 2018. Jan 14. 18:29
 -- Kiszolgáló verziója: 5.6.34-log
 -- PHP verzió: 7.1.5
 
@@ -39,7 +39,9 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 (1, 'JAVA'),
-(2, 'PHP');
+(2, 'PHP'),
+(13, 'OOP'),
+(14, 'CMS');
 
 -- --------------------------------------------------------
 
@@ -65,9 +67,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`post_id`, `post_category_id`, `post_title`, `post_author`, `post_date`, `post_img`, `post_content`, `post_tags`, `post_comment_count`, `post_status`) VALUES
-(1, 1, 'First Post in myCMS', 'Soocy', '2017-08-17', 'placeholder_dogs.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus, commodi consequatur eos fugiat fugit id nam natus optio quo sapiente sequi sit tempore ut vel! Et laudantium modi pariatur!', 'soocy, php, javascript, java', 0, 'draft'),
-(2, 2, 'Javascript curse', 'Soocy', '2017-08-17', ' ', 'Hi effix-marketing ,\r\n\r\nNow you can display social links on your issuu profile. Add links to your Instagram, Twitter, Facebook and Pinterest profiles, so others can follow you across the web.\r\nNew Mobile Navigation, Larger View and More\r\n\r\nWhile summer is in full swing, we’re still hard at work making sure issuu continues to provide the best global platform for publishing, discovering and reading digital magazines, catalogs and more. We’ve got even more updates for you on our blog.', 'javascript2, course, class, soocy', 0, 'draft'),
-(3, 2, 'Javascript curse', 'Soocy', '2017-08-17', ' ', 'Hi effix-marketing ,\r\n\r\nNow you can display social links on your issuu profile. Add links to your Instagram, Twitter, Facebook and Pinterest profiles, so others can follow you across the web.\r\nNew Mobile Navigation, Larger View and More\r\n\r\nWhile summer is in full swing, we’re still hard at work making sure issuu continues to provide the best global platform for publishing, discovering and reading digital magazines, catalogs and more. We’ve got even more updates for you on our blog.', 'javascript2, course, class', 0, 'draft');
+(7, 1, 'Its a post about cms', 'Soocy', '2018-01-14', 'placeholder_dogs.jpg', '            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet augue accumsan, ullamcorper odio et, laoreet ligula. Fusce eget faucibus erat. Proin euismod pharetra eros eget hendrerit. Mauris in neque auctor, rutrum massa vel, lacinia est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec interdum neque dui, lacinia rhoncus enim congue lobortis. Aliquam fermentum neque nisi, in tristique magna viverra id. In rhoncus enim erat. Cras vel turpis euismod urna elementum cursus. Praesent purus odio, fringilla ut vestibulum et, iaculis vitae tellus. Aliquam vel maximus lorem, eget sodales quam. Curabitur rhoncus nisl massa, non dictum orci sagittis ac. Phasellus tincidunt sapien quis ex pretium euismod.                                ', 'cms, good cms', 4, 'draft'),
+(8, 13, 'OOP', 'Sooce', '2018-01-14', 'placeholder_dogs.jpg', 'some text', 'OOP, Object, Programming', 4, 'draft');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -93,12 +94,12 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT a táblához `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cat_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT a táblához `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `post_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
