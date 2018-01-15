@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: localhost:3306
--- Létrehozás ideje: 2018. Jan 14. 18:29
+-- Létrehozás ideje: 2018. Jan 15. 21:47
 -- Kiszolgáló verziója: 5.6.34-log
 -- PHP verzió: 7.1.5
 
@@ -46,6 +46,30 @@ INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tábla szerkezet ehhez a táblához `comments`
+--
+
+CREATE TABLE `comments` (
+  `comment_id` int(3) NOT NULL,
+  `comment_post_id` int(3) NOT NULL,
+  `comment_author` varchar(255) NOT NULL,
+  `comment_email` varchar(255) NOT NULL,
+  `comment_content` text NOT NULL,
+  `comment_status` varchar(255) NOT NULL,
+  `comment_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- A tábla adatainak kiíratása `comments`
+--
+
+INSERT INTO `comments` (`comment_id`, `comment_post_id`, `comment_author`, `comment_email`, `comment_content`, `comment_status`, `comment_date`) VALUES
+(1, 10, 'Soocy', 'asdasd@asdasd.hu', 'itsa commentt', 'approved', '2018-01-14'),
+(2, 10, 'Soocy', 'asdasd@asdasd.hu', 'itsa commentt', 'approved', '2018-01-14');
+
+-- --------------------------------------------------------
+
+--
 -- Tábla szerkezet ehhez a táblához `posts`
 --
 
@@ -81,6 +105,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
+-- A tábla indexei `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`comment_id`);
+
+--
 -- A tábla indexei `posts`
 --
 ALTER TABLE `posts`
@@ -95,6 +125,11 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `categories`
   MODIFY `cat_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT a táblához `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `comment_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT a táblához `posts`
 --
